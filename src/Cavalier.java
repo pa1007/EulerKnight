@@ -7,7 +7,7 @@
  * l'échiquier.
  * <p>
  * Il est nécessaire de passer en
- * paramètre de cette classe dans cet ordre:
+ * argument de cette classe dans cet ordre:
  * X0, Y0 et N. Où la paire (X0,Y0) correspond
  * à la position de départ du cavalier et N
  * l'échiquier de N x N
@@ -67,7 +67,7 @@ public class Cavalier {
 
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
-            throw new Exception("Comme indiqué dans la doc, il faut 3 paramètres afin de lancer le programme.");
+            throw new Exception("Comme indiqué dans la doc, il faut 3 arguments afin de lancer le programme.");
         }
         taille = Integer.parseInt(args[2]);
         int posXD = Integer.parseInt(args[0]);
@@ -83,8 +83,9 @@ public class Cavalier {
             System.err.println("Il n'existe aucune solution.");
         } else {
             for (int x = 0; x < taille; x++) {
-                for (int y = 0; y < taille; y++)
+                for (int y = 0; y < taille; y++) {
                     System.out.print(echiquier[x][y] + 1 + " ");
+                }
                 System.out.println();
             }
         }
