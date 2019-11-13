@@ -32,14 +32,14 @@ public class CavalierALL {
         }
 
         size = Integer.parseInt(args[2]);
-        int posXD = Integer.parseInt(args[0]);
-        int posYD = Integer.parseInt(args[1]);
+        int posXD = Integer.parseInt(args[0]) -1;
+        int posYD = Integer.parseInt(args[1]) -1;
+	if (posXD <0 && posYD <0){
+	    throw new Exception("The positions cannot be under 1");
+	}
         chessboard = new int[size][size];
-        for (int[] row : chessboard) {
-            Arrays.fill(row, 0);
-        }
-        chessboard[posXD][posYD] = 1;
 
+        chessboard[posXD][posYD] = 1;
         findSolutions(posXD, posYD, 2);
         System.out.println(nbSolutions);
     }
